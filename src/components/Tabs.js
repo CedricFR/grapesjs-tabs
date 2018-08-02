@@ -55,6 +55,8 @@ export default (dc, { defaultModel, defaultView, ...config }) => {
           el.addEventListener('click', function(e) {
             var target = e.target;
             matches.call(target, attrTab) && activeTab(target);
+            e.stopPropagation();
+            e.preventDefault();
           });
         },
         ...config.tabsProps
